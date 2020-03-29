@@ -6,18 +6,15 @@ require 'pp'
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
 def gross_for_director(director_data)
-  new_hash = {
-    
-  }
   index = 0
   while index < director_data.length do
     total_gross = 0
     inner_index = 0
-    inner_len = director_data[:movies].length
+    movie_count = director_data[:movies].length
     
-
+binding.pry
     
-      while inner_index < inner_len do
+      while inner_index < movie_count do
         total_gross += director_data[:movies][inner_index][:worldwide_gross]
         inner_index += 1
       end
@@ -41,6 +38,7 @@ end
 
       index_dr +=1
     end
+    binding.pry
    result
   end
 
@@ -53,3 +51,5 @@ end
   #result = {}
   #nil
 #end
+
+
